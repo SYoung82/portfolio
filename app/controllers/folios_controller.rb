@@ -1,8 +1,11 @@
 class FoliosController < ApplicationController
-  before_action :set_folio, only: [:edit, :update]
+  before_action :set_folio, only: [:edit, :show, :update]
   
   def index
     @folio_items = Folio.all
+  end
+
+  def show
   end
   
   def new
