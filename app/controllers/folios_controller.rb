@@ -5,6 +5,10 @@ class FoliosController < ApplicationController
     @folio_items = Folio.all
   end
 
+  def react
+    @react_folio_items = Folio.react
+  end
+  
   def show
   end
   

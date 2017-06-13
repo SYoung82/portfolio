@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :folios, except: [:show]
   get 'folio/:id', to: 'folios#show', as: 'folio_show'
+  get 'react-items', to: 'folios#react'
 
   resources :blogs do
     member do
