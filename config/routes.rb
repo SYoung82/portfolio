@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'pages#contact'
 
-  resources :folios
+  resources :folios, except: [:show]
+  get 'folio/:id', to: 'folios#show', as: 'folio_show'
   resources :blogs
 end
