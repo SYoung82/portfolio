@@ -5,11 +5,16 @@ class FoliosController < ApplicationController
     @folio_items = Folio.all
   end
 
+  def react
+    @react_folio_items = Folio.react
+  end
+  
   def show
   end
   
   def new
     @folio_item = Folio.new
+    3.times { @folio_item.technologies.build }
   end
   
   def create
@@ -19,7 +24,7 @@ class FoliosController < ApplicationController
       if @folio_item.save
         format.html { redirect_to folios_path, notice: 'Your portfolio item is now live.' }
       else
-        formate.html { render :new }
+        format.html { render :new }
       end
     end
   end
@@ -51,7 +56,7 @@ class FoliosController < ApplicationController
   end
 
   def folio_params
-    params.require(:folio).permit(:title, :subtitle, :body)
+    params.require(:folio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
   end
   
 end
