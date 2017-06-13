@@ -14,6 +14,7 @@ class FoliosController < ApplicationController
   
   def new
     @folio_item = Folio.new
+    3.times { @folio_item.technologies.build }
   end
   
   def create
@@ -55,7 +56,7 @@ class FoliosController < ApplicationController
   end
 
   def folio_params
-    params.require(:folio).permit(:title, :subtitle, :body)
+    params.require(:folio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
   end
   
 end
