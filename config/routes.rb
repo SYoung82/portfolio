@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
-  resources :folios
-  get 'pages/home'
 
-  get 'pages/about'
+  root to: 'pages#home'
 
-  get 'pages/contact'
+  get 'about', to: 'pages#about'
 
-  resources :blogs
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'contact', to: 'pages#contact'
+
+  resources :folios, except: [:show]
+  get 'folio/:id', to: 'folios#show', as: 'folio_show'
+
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
+  
 end
