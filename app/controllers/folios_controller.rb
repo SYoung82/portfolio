@@ -23,7 +23,7 @@ class FoliosController < ApplicationController
       if @folio_item.save
         format.html { redirect_to folios_path, notice: 'Your portfolio item is now live.' }
       else
-        formate.html { render :new }
+        format.html { render :new }
       end
     end
   end
