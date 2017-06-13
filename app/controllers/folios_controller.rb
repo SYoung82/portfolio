@@ -1,5 +1,5 @@
 class FoliosController < ApplicationController
-  before_action :set_folio, only: [:edit, :show, :update]
+  before_action :set_folio, only: [:edit, :show, :update, :destroy]
   
   def index
     @folio_items = Folio.all
@@ -34,6 +34,13 @@ class FoliosController < ApplicationController
       else
         format.html { render :edit }
       end
+    end
+  end
+
+  def destroy
+    @folio_item.destroy
+    respond_to do |format|
+      format.html { redirect_to folios_path, notice: 'Portfolio item was successfully destroyed.' }
     end
   end
   
