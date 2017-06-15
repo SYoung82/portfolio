@@ -31,6 +31,7 @@ class FoliosController < ApplicationController
   end
   
   def edit
+    3.times { @folio_item.technologies.build }
   end
   
   def update
