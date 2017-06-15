@@ -1,5 +1,6 @@
 class FoliosController < ApplicationController
   before_action :set_folio, only: [:edit, :show, :update, :destroy]
+  layout 'folio'
   
   def index
     @folio_items = Folio.all
