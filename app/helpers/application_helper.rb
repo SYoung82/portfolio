@@ -13,5 +13,9 @@ module ApplicationHelper
     if session[:source] 
       content_tag(:p, "Thanks for visiting from #{session[:source]} and you are on the #{layout_name} layout", class: "source-greeting")
     end
+  end
+
+  def copyright_generator
+    @copyright = SyoungViewTool::Renderer.copyright('Scott Young', 'All rights reserved.')
   end 
 end
