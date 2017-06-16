@@ -56,4 +56,4 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'devise', '~> 4.3'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
-gem 'syoung_view_tool', git: 'https://github.com/SYoung82/syoung_view_tool'
+gem 'syoung_view_tool', '~> 0.1.1'
