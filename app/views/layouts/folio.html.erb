@@ -13,7 +13,7 @@
   <body>
     <%= render 'shared/folio_nav' %>
 
-    <%= render 'shared/folio_masthead' %>
+    <%= render 'shared/folio_masthead' unless logged_in?(:site_admin) %>
     
     <%= yield %>
 
