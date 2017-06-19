@@ -4,7 +4,7 @@ class FoliosController < ApplicationController
   access all: [:show, :index, :react], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   def index
-    @folio_items = Folio.all
+    @folio_items = Folio.by_position
   end
 
   def react
