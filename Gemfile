@@ -64,5 +64,6 @@ gem 'mini_magick', '~> 4.7', '>= 4.7.1'
 gem 'carrierwave-aws', '~> 1.1'
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.10'
+gem 'gritter', '~> 1.2'
 
 gem 'syoung_view_tool', '~> 0.1.1'
