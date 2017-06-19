@@ -7,6 +7,14 @@ class FoliosController < ApplicationController
     @folio_items = Folio.by_position
   end
 
+  def sort
+    params[:order].each do |key, value|
+      Folio.find(value[:id]).update(position: value[:position])
+    end
+
+    render nothing: true
+  end
+
   def react
     @react_folio_items = Folio.react
   end

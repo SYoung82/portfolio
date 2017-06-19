@@ -8,7 +8,10 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'pages#contact'
 
-  resources :folios, except: [:show]
+  resources :folios, except: [:show] do
+    put :sort, on: :collection
+  end
+  
   get 'folio/:id', to: 'folios#show', as: 'folio_show'
   get 'react-items', to: 'folios#react'
 
