@@ -24,7 +24,6 @@ class FoliosController < ApplicationController
   
   def new
     @folio_item = Folio.new
-    3.times { @folio_item.technologies.build }
   end
   
   def create
@@ -40,7 +39,6 @@ class FoliosController < ApplicationController
   end
   
   def edit
-    3.times { @folio_item.technologies.build }
   end
   
   def update
@@ -67,7 +65,12 @@ class FoliosController < ApplicationController
   end
 
   def folio_params
-    params.require(:folio).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name])
+    params.require(:folio).permit(:title, 
+                                  :subtitle, 
+                                  :body, 
+                                  :main_image, 
+                                  :thumb_image, 
+                                  technologies_attributes: [:id, :name, :_destroy])
   end
   
 end
