@@ -6,6 +6,10 @@ class Folio < ApplicationRecord
   include Placeholder
   validates_presence_of :title, :body, :main_image, :thumb_image
 
+  def self.by_position
+    order("position ASC")
+  end
+  
   # Same as scope below with different subtitle
   def self.react
     where(subtitle: 'React')
