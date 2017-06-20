@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'contact', to: 'pages#contact'
 
+  get 'tech-news', to: 'pages#tech_news'
+
   resources :folios, except: [:show] do
     put :sort, on: :collection
   end
