@@ -17,4 +17,8 @@ class Blog < ApplicationRecord
   def self.featured_blogs
     limit(2)
   end
+
+  def self.recent
+    all.order(created_at: :desc)
+  end
 end
