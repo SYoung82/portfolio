@@ -18,10 +18,14 @@ class BlogsController < ApplicationController
   # GET /blogs/1.json
   def show
     @blog = Blog.includes(:comments).friendly.find(params[:id])
-    @comment = Comment.new
+    if logged_in?(:site_admin) || @blog.published?
+      @comment = Comment.new
 
-    @page_title = @blog.title
-    @seo_keywords = @blog.title
+      @page_title = @blog.title
+      @seo_keywords = @blog.title
+    else
+      redirect_to blogs_path, notice: "You shall not pass!"
+    end
   end
 
   # GET /blogs/new
