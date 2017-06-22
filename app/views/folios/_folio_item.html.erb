@@ -1,7 +1,10 @@
-<div class="card" data-id="<%= folio_item.id %>">
-  <%= image_tag folio_img(folio_item.thumb_image, 'thumb') %>
-  <p class="card-text">
-    <span><%= link_to folio_item.title, folio_show_path(folio_item) %></span>
-    <%= folio_item.subtitle %>
-  </p>
+<div class="col-md-4">
+  <div class="card" data-id="<%= folio_item.id %>">
+    <%= image_tag folio_img(folio_item.thumb_image, 'thumb'), width: '100%' %>
+    <p class="card-text">
+      <span><%= link_to folio_item.title, folio_show_path(folio_item) %></span>
+      <%= folio_item.subtitle %>
+    </p>
+  </div>
 </div>
+
