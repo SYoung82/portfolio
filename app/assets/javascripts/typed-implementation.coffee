@@ -1,8 +1,7 @@
 ready = ->
   Typed.new '.element',
     strings: [
-      "Cover is a one-page template for building simple and beautiful home pages.",
-      "Download, edit the text, and add your own fullscreen background photo to make it your own."
+      "Thanks for stopping by. Feel free to explore and don't hesitate to get in touch."
     ]
     typeSpeed: 0,
     loop: true,
