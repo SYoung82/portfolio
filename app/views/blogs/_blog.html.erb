@@ -3,6 +3,9 @@
   <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
   
   <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
-
-  <p><%= markdown blog.body %></p>
+  <% if current_page?(:controller => 'blogs', :action => 'index') %>
+    <p><%= truncate(blog.body, :length => 300) %>
+  <% else %>
+    <p><%= markdown blog.body %></p>
+  <% end %>
 </div>
