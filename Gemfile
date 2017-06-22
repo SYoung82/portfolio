@@ -71,3 +71,5 @@ gem 'redcarpet', '~> 3.4'
 gem 'coderay', '~> 1.1', '>= 1.1.1'
 
 gem 'syoung_view_tool', '~> 0.1.1'
+
+ruby "2.4.1"
