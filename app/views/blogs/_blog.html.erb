@@ -4,7 +4,7 @@
   
   <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
   <% if current_page?(:controller => 'blogs', :action => 'index') %>
-    <p><%= truncate(markdown(blog.body), :length => 300) %>
+    <p><%= markdown(truncate(blog.body, :length => 300)) %>
   <% else %>
     <p><%= markdown blog.body %></p>
   <% end %>
